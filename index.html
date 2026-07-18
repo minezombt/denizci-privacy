@@ -95,7 +95,7 @@
 <body>
 
 <div class="lang-switch">
-  <a href="#tr">Türkçe</a> &nbsp;|&nbsp; <a href="#en">English</a>
+  <a href="#tr">Türkçe</a> &nbsp;|&nbsp; <a href="#en">English</a> &nbsp;|&nbsp; <a href="#es">Español</a>
 </div>
 
 <h1 id="tr">DENİZCİ — Gizlilik Politikası</h1>
@@ -241,6 +241,79 @@
 
 <h2>6. Data Controller and Contact</h2>
 <p>For the personal data processing activities described in this policy, the data controller (under the Turkish Personal Data Protection Law No. 6698 / KVKK and, where applicable, the GDPR) is the developer of the DENİZCİ app. For questions, requests, or to exercise your data subject rights: <a href="mailto:minezombt@gmail.com">minezombt@gmail.com</a></p>
+
+<hr class="section-break">
+
+<h1 id="es">DENİZCİ — Política de Privacidad</h1>
+<p class="meta">Última actualización: 11 de julio de 2026</p>
+
+<p>Este documento explica qué datos procesa la aplicación móvil <strong>DENİZCİ</strong> (iOS y Android) y con qué finalidad. DENİZCİ está diseñada para funcionar de forma <strong>offline por defecto</strong>: no existe un sistema de cuentas de usuario y sus datos permanecen únicamente en su propio dispositivo de forma predeterminada.</p>
+
+<h2>1. Qué Datos Recopilamos</h2>
+
+<h3>1.1 Ubicación (GPS)</h3>
+<p>La aplicación accede a la ubicación de su dispositivo para las siguientes funciones:</p>
+<ul>
+  <li>Mostrar su posición en vivo, velocidad (SOG) y rumbo (COG) en el mapa,</li>
+  <li>Incluir automáticamente sus coordenadas en los mensajes de socorro Mayday/Pan-Pan,</li>
+  <li>Obtener los datos meteorológicos correspondientes a su ubicación actual,</li>
+  <li>Adjuntar automáticamente la posición a las entradas del cuaderno de bitácora.</li>
+</ul>
+<p>Los datos de ubicación se procesan y almacenan <strong>únicamente en su dispositivo</strong> (base de datos SQLite local) mientras usted conceda el permiso. Su ubicación nunca se envía a ningún servidor que nosotros operemos.</p>
+
+<p><strong>Seguimiento de ubicación en segundo plano (opcional):</strong> Al iniciar la aplicación por primera vez, o desde la pantalla de Ajustes, la aplicación le pregunta si desea que su última posición conocida se mantenga actualizada incluso con la aplicación en segundo plano. Esta función está <strong>desactivada de forma predeterminada</strong> y solo se ejecuta si usted la activa. Cuando está activada:</p>
+<ul>
+  <li>Solo se almacena su <strong>posición más reciente</strong> — se sobrescribe la anterior. La aplicación no mantiene un historial de ruta ni un registro de trayecto.</li>
+  <li>Su único propósito es que el mapa y la pantalla de emergencia se abran con una coordenada precisa cuando vuelva a la aplicación.</li>
+  <li>Puede desactivarla en cualquier momento desde Ajustes; el seguimiento en segundo plano se detiene de inmediato.</li>
+  <li>En Android, mientras esta función está activa, el sistema operativo exige mostrar una notificación permanente por motivos de transparencia — no se puede ocultar, ya que es un requisito de la plataforma Android, no una decisión nuestra.</li>
+</ul>
+
+<h3>1.2 Perfil de la Embarcación</h3>
+<p>El nombre de la embarcación y el número de personas a bordo (POB) que introduce opcionalmente para los mensajes de emergencia se almacenan únicamente en su dispositivo. Esta información nunca se transmite a ningún servidor; solo se copia a su portapapeles cuando pulsa "Copiar Texto", para que la pegue en su propia radio o aplicación de mensajería.</p>
+
+<h3>1.3 Cuaderno de Bitácora y Zonas Guardadas</h3>
+<p>Las entradas del cuaderno de bitácora que crea (título, notas, junto con el clima y la posición del momento) y las zonas que dibuja y guarda en el mapa (p. ej. fondeaderos, caladeros de pesca) se conservan únicamente en la base de datos local de su dispositivo. Nada de esto se sincroniza con ningún servidor nuestro.</p>
+
+<h3>1.4 Datos de Fallos (Crash) y Diagnóstico Técnico</h3>
+<p>Si la aplicación se cierra inesperadamente, se recopila un informe técnico del error (la ubicación del código donde ocurrió el error, el modelo del dispositivo, la versión del sistema operativo, la versión de la aplicación) a través de un servicio de terceros llamado <strong>Sentry</strong>, para que podamos diagnosticar y corregir el problema. Estos informes:</p>
+<ul>
+  <li><strong>No</strong> contienen información de identificación personal (su nombre, correo electrónico, ubicación, etc.),</li>
+  <li>Se envían a servidores alojados dentro de la Unión Europea,</li>
+  <li>Se utilizan exclusivamente con fines de depuración.</li>
+</ul>
+
+<h2>2. Servicios de Terceros</h2>
+<p>Para ofrecer sus funciones principales, DENİZCİ realiza solicitudes de red a los siguientes servicios de terceros. Como ocurre con cualquier solicitud a internet, estos servicios pueden ver de forma natural su dirección IP y (en el caso de los servicios de mapas) la zona que está visualizando:</p>
+
+<table>
+  <tr><th>Servicio</th><th>Finalidad</th><th>Datos compartidos</th></tr>
+  <tr><td>Apple Maps (iOS) / Google Maps SDK (Android)</td><td>Renderizado del mapa</td><td>Sujeto a las políticas de privacidad propias de Apple/Google</td></tr>
+  <tr><td>MapTiler, OpenStreetMap, OpenSeaMap</td><td>Imágenes de la capa de mapa base / balizamiento</td><td>Dirección IP, teselas del mapa visualizadas</td></tr>
+  <tr><td>OpenTopoData (datos GEBCO)</td><td>Herramienta de sonda — profundidad del punto tocado</td><td>Dirección IP, latitud/longitud consultada</td></tr>
+  <tr><td>Open-Meteo</td><td>Previsión meteorológica y marina</td><td>Latitud/longitud consultada (no requiere cuenta ni clave API)</td></tr>
+  <tr><td>Sentry</td><td>Notificación de fallos</td><td>Véase el apartado 1.4</td></tr>
+</table>
+
+<p class="note">DENİZCİ no contiene redes publicitarias, rastreadores de marketing ni SDK de análisis del comportamiento del usuario. Sus datos nunca se venden, alquilan ni comparten con fines de marketing.</p>
+
+<h2>3. Su Control sobre los Datos</h2>
+<ul>
+  <li>Permiso de ubicación: revocable en cualquier momento desde la aplicación de Ajustes de su dispositivo.</li>
+  <li>Seguimiento en segundo plano: puede desactivarlo en cualquier momento desde la pantalla de Ajustes de la aplicación.</li>
+  <li>Entradas del cuaderno de bitácora y zonas guardadas: puede eliminarlas individualmente desde sus respectivas pantallas.</li>
+  <li>Caché de mapa sin conexión: puede borrarla en cualquier momento desde Ajustes → "Vaciar Caché".</li>
+  <li>Para eliminar permanentemente todos los datos locales: basta con desinstalar la aplicación — no queda ningún dato en ningún servidor bajo nuestro control.</li>
+</ul>
+
+<h2>4. Privacidad de los Menores</h2>
+<p>DENİZCİ no está dirigida a menores y no recopila conscientemente datos de menores de 13 años.</p>
+
+<h2>5. Cambios en Esta Política</h2>
+<p>Esta política puede actualizarse a medida que se añadan nuevas funciones a la aplicación. Los cambios importantes se publicarán en esta página.</p>
+
+<h2>6. Responsable del Tratamiento y Contacto</h2>
+<p>En relación con las actividades de tratamiento de datos personales descritas en esta política, el responsable del tratamiento (conforme a la Ley de Protección de Datos Personales de Turquía n.º 6698 / KVKK y, cuando corresponda, el RGPD) es el desarrollador de la aplicación DENİZCİ. Para preguntas, solicitudes o para ejercer sus derechos como interesado: <a href="mailto:minezombt@gmail.com">minezombt@gmail.com</a></p>
 
 <footer>
   DENİZCİ · com.denizci.app
